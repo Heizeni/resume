@@ -4,6 +4,32 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
+var header = {
+  name: {
+    firstname: 'Valeriia',
+    lastname: 'Honzha',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$/month',
+  address: 'Narnia, Hogwarts 9/14 St.',
+}
+var footer = {
+  social: {
+    email: {
+      text: 'valeriia@mail.com',
+      href: 'mailto:valeriia@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
+// ================================================================
 
 // router.get Створює нам один ентпоїнт
 
@@ -23,6 +49,174 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Summary',
+    },
+    header,
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience in development. 
+        Whenever I start to work on a new project I learn the domain and try to understand the idea of the project. 
+        Good team player, every colleague is a friend to me.`,
+      },
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds ) 
+        and sport statistics ( tournament position, goals etc), analyzing by simple mathematics models 
+        and preparing probability for such events like: money line - first win / draw / second win, totals etc.`,
+      },
+    },
+    footer,
+  })
+})
+router.get('/skills', function (req, res) {
+  res.render('skills', {
+    page: {
+      title: 'Resume | Skills',
+    },
+    header,
+    main: {
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlebars',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'VS Code & Git',
+          point: 9,
+          isTop: false,
+        },
+        {
+          name: 'Terminal & NPM',
+          point: 7,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+      hobbies: [
+        {
+          name: 'Drawing',
+          isMain: true,
+        },
+        {
+          name: '3D modeling',
+          isMain: true,
+        },
+        {
+          name: 'Dancing',
+          isMain: false,
+        },
+      ],
+    },
+    footer,
+  })
+})
+router.get('/education', function (req, res) {
+  res.render('education', {
+    page: {
+      title: 'Resume | Education',
+    },
+    header,
+    main: {
+      education: [
+        {
+          name: 'Hogwarts',
+          isEnd: true,
+        },
+        {
+          name: 'Oxford',
+          isEnd: false,
+        },
+        {
+          name: 'Narnia',
+          isEnd: true,
+        },
+      ],
+      certificates: [
+        {
+          name: 'Whatever',
+          id: 1548,
+        },
+        {
+          name: 'Whoever',
+          id: 1236,
+        },
+        {
+          name: 'Wherever',
+          id: 1578,
+        },
+      ],
+    },
+    footer,
+  })
+})
+
+router.get('/work', function (req, res) {
+  res.render('work', {
+    layout: 'big',
+    page: {
+      title: 'Resume | work',
+    },
+    header,
+    main: {
+      work: [
+        {
+          position: 'Junior Fullstack Developer',
+          company: {
+            name: 'IT Brains',
+            url: 'https://it-brains.com.ua/',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: null,
+          },
+          projectAmount: 3,
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://resume.com.ua/',
+              about:
+                'No idea what to write here so let it be some nonsense',
+              stackAmount: 3,
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Nodejs',
+                },
+              ],
+              awards: [
+                {
+                  name: 'Background verification - bla bla bla bla bla bla',
+                },
+                {
+                  name: 'Preparing SEO optimized pages',
+                },
+              ],
+              awardAmount: 2,
+            },
+          ],
+        },
+      ],
+    },
+    footer,
   })
 })
 
