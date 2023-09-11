@@ -1,0 +1,106 @@
+<div>
+  <h1>{{name}}</h1>
+  <hr />
+  <br />
+  <div>Birthdate: {{birthdate}}</div>
+  <div>Birthplace: {{birthplace}}</div>
+  <div>Deathdate: {{deathdate}}</div>
+  <div>Deathplace: {{deathplace}}</div>
+  <div>Nationality: {{nationality}}</div>
+  <div>Occupation: {{occupation}}</div>
+  <br />
+  <hr />
+  <h2>Known For</h2>
+  <ul>
+    {{#each known_for}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Education</h2>
+  <ul>
+    {{#each education}}
+      <li>
+        <p>Degree: {{degree}}</p>
+        <p>Field: {{field}}</p>
+        <p>Institution: {{institution}}</p>
+        <p>Year: {{year}}</p>
+      </li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Notable Publications</h2>
+  <ul>
+    {{#each notable_publications}}
+      <li>
+        <p>Title: {{title}}</p>
+        <p>Year: {{year}}</p>
+        <p>Publisher: {{publisher}}</p>
+      </li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Partners</h2>
+  <ul>
+    {{#each partners}}
+      <li>
+        <p>Name: {{name}}</p>
+        <p>Relationship: {{relationship}}</p>
+        <p>Years: {{years}}</p>
+      </li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Awards</h2>
+  <ul>
+    {{#each awards}}
+      <li>
+        <p>Title: {{title}}</p>
+        <p>Year: {{year}}</p>
+        <p>Description: {{description}}</p>
+      </li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Influences</h2>
+  <ul>
+    {{#each influences}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Influenced</h2>
+  <ul>
+    {{#each influenced}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Quotes</h2>
+  <ul>
+    {{#each quotes}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Major Discoveries</h2>
+  <ul>
+    {{#each major_discoveries}}
+      <li>
+        <p>Title: {{title}}</p>
+        <p>Year: {{year}}</p>
+        <p>Description: {{description}}</p>
+      </li>
+    {{/each}}
+  </ul>
+  <hr />
+  <h2>Contributions</h2>
+  <ul>
+    <li>
+      <p>Title: {{contributions.title}}</p>
+      <p>Description: {{contributions.description}}</p>
+      <p>Year: {{contributions.year}}</p>
+      <p>Field: {{contributions.field}}</p>
+    </li>
+  </ul>
+</div>
