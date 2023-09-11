@@ -1,0 +1,77 @@
+<div>
+  <h1>{{program.excursion.name}}</h1>
+  <hr />
+  <em>
+    <p>{{program.excursion.location.city}},
+      {{program.excursion.location.country}}
+    </p>
+  </em>
+  <b><p>Date: {{program.excursion.date}}</p></b>
+  <hr />
+  {{#each program.excursion.program}}
+    <div class='activity'>
+      <h2>{{name}}</h2>
+      <div>Type: {{type}}</div>
+      <div>Duration: {{duration}} hours</div>
+
+      {{#if details.museum}}
+        <div class='museum-details'>
+          <h3>Museum Details</h3>
+          <div>Name: {{details.museum.name}}</div>
+          <div>Address:
+            {{details.museum.location.address}},
+            {{details.museum.location.city}},
+            {{details.museum.location.country}}</div>
+
+          {{#each details.museum.exhibits}}
+            <div class='exhibit'>
+              <h4>{{name}}</h4>
+              {{#if artist}}
+                <div>Artist: {{artist}}</div>
+              {{else}}
+                <div>Artist: Unknown</div>
+              {{/if}}
+              <div>Description: {{description}}</div>
+              {{#if audio_guide}}
+                <div>Audio Guide: Available</div>
+              {{else}}
+                <div>Audio Guide: Not Available</div>
+              {{/if}}
+            </div>
+          {{/each}}
+
+          <h4>Guide</h4>
+          <div>Name: {{details.museum.guide.name}}</div>
+          <div>Language:
+            {{details.museum.guide.language}}</div>
+          <div>Rating: {{details.museum.guide.rating}}</div>
+          <br />
+          <hr />
+        </div>
+      {{/if}}
+
+      {{#if details.venue}}
+        <div class='venue-details'>
+          <h3>Venue Details</h3>
+          <div>Name: {{details.venue.name}}</div>
+          <div>Address:
+            {{details.venue.location.address}},
+            {{details.venue.location.city}},
+            {{details.venue.location.country}}</div>
+
+          {{#each details.performers}}
+            <div class='performer'>
+              <h4>{{name}}</h4>
+              <div>Type: {{type}}</div>
+            </div>
+          {{/each}}
+
+          <h4>Guide</h4>
+          <div>Name: {{details.guide.name}}</div>
+          <div>Language: {{details.guide.language}}</div>
+          <div>Rating: {{details.guide.rating}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
