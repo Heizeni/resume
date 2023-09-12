@@ -1,0 +1,70 @@
+<div>
+  <h1>{{name}}</h1>
+  <hr />
+  <div>{{description}}</div>
+
+  <h2>Price: ${{price}}</h2>
+  <p>Category: {{category}}</p>
+  <hr />
+  <h2>Features</h2>
+  <ul>
+    <li>Processor:
+      {{features.processor.brand}}
+      {{features.processor.model}}, Speed -
+      {{features.processor.speed}}, Cores -
+      {{features.processor.cores}}, Cache -
+      {{features.processor.cache}}</li>
+    <li>Memory: Type -
+      {{features.memory.type}}, Size -
+      {{features.memory.size}}, Speed -
+      {{features.memory.speed}}</li>
+    <li>Storage: Type -
+      {{features.storage.type}}, Size -
+      {{features.storage.size}}</li>
+    <li>Display: Size -
+      {{features.display.size}}, Resolution -
+      {{features.display.resolution}}, Technology -
+      {{features.display.technology}}, Color Space -
+      {{features.display.color_space}}, Brightness -
+      {{features.display.brightness}}, Refresh Rate -
+      {{features.display.refresh_rate}}</li>
+    <li>Graphics: Brand -
+      {{features.graphics.brand}}, Model -
+      {{features.graphics.model}}, Memory -
+      {{features.graphics.memory}}</li>
+    <li>Ports:
+      <ul>
+        {{#each features.ports}}
+          <li>Type -
+            {{this.type}}, Count -
+            {{this.count}}
+            {{#if this.features}}
+              <ul>
+                {{#each this.features}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+    <li>Battery: Type -
+      {{features.battery.type}}, Capacity -
+      {{features.battery.capacity}}, Life -
+      {{features.battery.life}}</li>
+    <li>Weight: {{features.weight}}</li>
+    <li>Dimensions: Height -
+      {{features.dimensions.height}}, Width -
+      {{features.dimensions.width}}, Depth -
+      {{features.dimensions.depth}}</li>
+    <li>Operating System: {{features.operating_system}}</li>
+    <li>Accessories:
+      <ul>
+        {{#each features.accessories}}
+          <li>{{name}} - ${{price}}</li>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>
+</div>
