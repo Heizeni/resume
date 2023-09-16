@@ -1,0 +1,97 @@
+<div class='container'>
+  <section>
+    <div class='card'>
+      <div class='card-body'>
+        <h1>{{heading.main.title}}</h1>
+        <p>{{heading.main.text}}</p>
+        <button
+          class='btn btn-primary'
+        >{{heading.main.button_text.solid}}</button>
+        <button
+          class='btn btn-outline-primary'
+        >{{heading.main.button_text.outline}}</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class='card'>
+      <div class='card-body'>
+        <h2>{{heading.second.title}}</h2>
+        <p>{{heading.second.text}}</p>
+        <button
+          class='btn btn-secondary'
+        >{{heading.second.button_text.solid}}</button>
+        <button
+          class='btn btn-outline-secondary'
+        >{{heading.second.button_text.outline}}</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class='card'>
+      <div class='card-body'>
+        <h3>{{heading.subblock.title}}</h3>
+        <p>{{heading.subblock.text}}</p>
+        <button
+          class='btn btn-dark'
+        >{{heading.subblock.button_text.solid}}</button>
+        <button
+          class='btn btn-outline-dark'
+        >{{heading.subblock.button_text.outline}}</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+    <diiv class="card-body">
+    <section><div class='display-1'>{{nested_display.title}}</div>
+    </section>
+    <section>
+        <div class="card">
+        <div class="card-body">
+      <div class="display-4">{{nested_display.children_display.title}}</div>
+      <p>{{nested_display.children_display.text}}</p>
+      <button
+        class='btn btn-warning'
+      >{{nested_display.children_display.button.text}}</button>
+    </section>
+    <section>
+        <h6>{{nested_display.header_text}}</h6>
+        <button
+        class='btn btn-info btn-sm'
+        >{{nested_display.button.text}}</button>
+    </section>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <section>
+    <div class="card">
+        <div class="card-body">
+        <h2>{{paragraph.title}}</h2>
+        <p>{{paragraph.text}}</p>
+        <a
+        href='{{paragraph.button.url}}'
+        class='btn btn-link'
+        >{{paragraph.button.text}}</a>
+        <div class="card">
+        <div class="card-body">
+        <ul>
+        {{#each paragraph.list_name}}
+            <li><a
+                href='{{this.url}}'
+                class='btn btn-link'
+            >{{this.text}}</a></li>
+        {{/each}}
+        </div>
+        </ul>
+        </div>
+        </div>
+    </div>
+  </section>
+</div>
